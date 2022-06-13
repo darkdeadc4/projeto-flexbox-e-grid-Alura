@@ -1,0 +1,237 @@
+.principal {
+    display: grid;
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+}
+
+.titulo__pagina {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.titulo__secao {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+@media screen and (min-width: 768px) {
+    .principal {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        grid-template-areas: 
+            "titulo__pagina titulo__pagina titulo__pagina"
+            "destaque__video destaque__video videos__recentes"
+            "secao__videos secao__videos secao__videos"
+            "produtos__recentes destaque__produtos destaque__produtos"
+            "secao__produtos secao__produtos secao__produtos"
+            ;
+        column-gap: 2rem;
+        padding: 1rem 4rem;
+        grid-column: 2;
+    }
+
+    .titulo__secao {
+        grid-column: span 4;
+    }
+}
+
+.cartao { 
+    width: 100%;
+    border-radius: 2rem;
+    overflow: hidden;
+    background-color: #2C343A;
+}
+
+.cartao__imagem--desktop {
+    display: none;
+}
+
+.cartao--destaque {
+    margin-bottom: 1rem;
+}
+
+.cartao__conteudo {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.5rem;
+    padding: 1rem;
+}
+
+.cartao__destaque {
+    grid-template: span 2;
+}
+
+.cartao__titulo {
+    font-size: 1rem;
+    font-weight: 700;
+    grid-column: span 2;
+}
+
+.cartao__perfil {
+    color: #95999C;
+    font-size: 0.9rem;
+    grid-column: span 2;
+}
+
+.cartao__info {
+    display: flex;
+    align-items: center;
+    color: #95999C;
+}
+
+.cartao__info--tempo::before {
+    content: "\e90c";
+    margin-right: 0.5rem;
+}
+
+.cartao__info--visualizacao::before {
+    content: "\e90f";
+    margin-right: 0.5rem;
+}
+
+.cartao__botao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0480DC;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    justify-self: flex-end;
+}
+
+.cartao__botao--play::before {
+    content: "\e90b";
+    font-size: 2rem;
+}
+
+.cartao__botao--destaque {
+    width: 100%;
+    grid-column: span 2;
+}
+
+.cartao__botao--destaque::before {
+    margin-right: 0.5rem;
+}
+
+.cartao__recentes {
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+    .cartao__destaque {
+        margin-bottom: 0;
+    }
+
+    .cartao__imagem--mobile {
+        display: none;
+    }
+
+    .cartao__imagem--desktop {
+        display: block;
+    }
+
+    .cartao__botao--destaque {
+        grid-column: auto;
+        padding: 1rem 0.5rem;
+    }
+    .cartao__recentes {
+        display: grid;
+        grid-template-columns: auto auto;
+        align-items: center;
+        row-gap: 1.5rem;
+        width: 256px;
+        padding: 1rem;
+        box-sizing: border-box;
+        align-self: flex-start;
+        
+    }
+
+    .cartao__recentes .cartao__titulo {
+        grid-column: auto;
+    }
+
+    .cartao__link {
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: #0480DC;
+        justify-self: flex-end;
+    }
+
+    .cartao__lista {
+        display: grid;
+        row-gap: 1rem;
+        grid-column: span 2;
+    }
+
+    .cartao__item {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 0.5rem;
+    }
+
+    .cartao__item--thumbnail {
+        width: 32px;
+        grid-row: span 2;
+    }
+
+    .cartao__item--titulo {
+        font-size: 0.9rem;
+        line-height: 1.2rem;
+        font-weight: 700;
+    }
+
+    .cartao__item--perfil {
+        font-size: 0.8rem;
+        color: #95999C;
+    }
+}
+
+.cartao__botao--carrinho::before {
+    content: "\e901";
+    font-size: 2rem;
+}
+
+.secao {
+    display: grid;
+    gap: 1rem;
+}
+
+.cartao__info--preco::before {
+    content: "\e905";
+    font-size: 1.5rem;
+    
+}
+
+@media screen and (min-width:768px) {
+    .secao {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .destaque__video {
+        grid-area: destaque__video;
+    }
+    
+    .videos__recentes {
+        grid-area: videos__recentes;
+    }
+    
+    .secao__videos {
+        grid-area: secao__videos;
+    }
+    
+    .destaque__produtos {
+        grid-area: destaque__produtos;
+    }
+    
+    .produtos__recentes {
+        grid-area: produtos__recentes;
+    }
+    
+    .secao__produtos {
+        grid-area: secao__produtos;
+    }
+    
+}
+

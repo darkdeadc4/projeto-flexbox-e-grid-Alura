@@ -1,0 +1,83 @@
+.menu__lateral {
+    display: flex;
+    flex-direction: column;
+    background-color: #15191c;
+    width: 75vw;
+    height: 100vh;
+
+    position: absolute;
+    left: -100vw;
+    transition: .50s;
+}
+
+.menu__lateral--ativo {
+    left: 0;
+    transition: .50s;
+}
+
+.menu__lateral--logo {
+    align-self: center;
+    width: 7.5rem;
+    padding: 1rem;
+}
+
+.menu__lateral--link {
+    display: flex;
+    align-items: center;
+    padding-left: 4rem;
+    height: 4rem;
+    color: #95999C;
+}
+
+.menu__lateral--link--ativo {
+    color: #fff;
+    padding-left: 3.5rem;
+    border-left: 8px solid #fff;
+}
+
+.menu__lateral--link::before {
+    content: " ";
+    position: absolute;
+    left: 1.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.menu-lateral__link--inicio::before {
+    content: "\e902";
+
+}
+
+.menu-lateral__link--video::before {
+    content: "\e90e";
+
+}
+
+.menu-lateral__link--picos::before {
+    content: "\e909";
+
+}
+
+.menu-lateral__link--integrantes::before {
+    content: "\e903";
+
+}
+
+.menu-lateral__link--camisas::before {
+    content: "\e900";
+
+}
+
+.menu-lateral__link--pinturas::before {
+    content: "\e90a";
+
+}
+
+@media screen and (min-width: 768px) {
+    .menu__lateral {
+        position: static;
+        width: 200px;
+        grid-row: 1 / span 2;
+    }
+}
